@@ -2,13 +2,14 @@ package com.fc.study.controller;
 
 import com.fc.study.entity.Greeting;
 import com.fc.study.entity.Person;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@RestController
+@Controller
 public class MyController {
 
     @RequestMapping("/index")
@@ -31,6 +32,7 @@ public class MyController {
 
     /**
      * 使用get方法获取页面
+     *
      * @param model
      * @return
      */
@@ -42,6 +44,7 @@ public class MyController {
 
     /**
      * 使用post获取页面提交的数据
+     *
      * @param greeting
      * @return
      */

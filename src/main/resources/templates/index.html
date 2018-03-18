@@ -1,6 +1,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <link rel="icon" href="../static/images/1165307.png" th:href="@{/static/images/1165307.png}" type="image/x-icon"/>
+    <link href="../static/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
     <style type="text/css">
         .align-center {
             margin: 0 auto; /* 居中 这个是必须的，，其它的属性非必须 */
@@ -20,9 +21,9 @@
 </head>
 <body>
 
-<div>
-    <div>
-        <h3>访问model</h3>
+<div role="navigation">
+    <div class="navbar navbar-inverse">
+        <h3 class="navbar-brand">访问model</h3>
     </div>
     <div>
         <span th:text="${singlePerson.name}"></span>
@@ -56,6 +57,7 @@
         console.log(name);
     }
 </script>
-
+<script src="../static/bootstrap/js/bootstrap.bundle.min.js"/>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
 </body>
 </html>

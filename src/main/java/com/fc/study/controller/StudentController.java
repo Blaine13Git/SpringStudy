@@ -31,6 +31,12 @@ public class StudentController {
         return "OK";
     }
 
+    /**
+     * http://localhost:8989/save?name=xxx&age=12 构建类似这样的链接进行提交
+     * @param name
+     * @param age
+     * @return
+     */
     @GetMapping(value = "/save")
     public String updateStudent(@RequestParam String name, @RequestParam int age) {
         studentService.updateStudent(name, age);
