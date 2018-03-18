@@ -23,4 +23,11 @@ public class StudentService {
         return studentDao.getStudentById(id);
     }
 
+    public void insertStudent(Student student) {
+
+    }
+
+    public void updateStudent(String name, int age) {
+
+    }
 }

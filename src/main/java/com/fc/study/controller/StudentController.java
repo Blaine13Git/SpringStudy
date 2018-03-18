@@ -3,6 +3,7 @@ package com.fc.study.controller;
 import com.fc.study.entity.Student;
 import com.fc.study.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
@@ -22,6 +23,18 @@ public class StudentController {
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public Student getStudentById(@PathVariable("id") Integer id) {
         return studentService.getStudentById(id);
+    }
+
+    @RequestMapping(method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE)
+    public String insertStudent(@RequestBody Student student) {
+        studentService.insertStudent(student);
+        return "OK";
+    }
+
+    @GetMapping(value = "/save")
+    public String updateStudent(@RequestParam String name, @RequestParam int age) {
+        studentService.updateStudent(name, age);
+        return "OK";
     }
 
 }
