@@ -1,4 +1,4 @@
-package com.fc.study;
+package com.fc.study.entity;
 
 public class Greeting {
     private long id;

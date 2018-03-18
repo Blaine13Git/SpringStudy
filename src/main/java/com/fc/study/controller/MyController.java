@@ -1,17 +1,15 @@
-package com.fc.study;
+package com.fc.study.controller;
 
-import org.springframework.stereotype.Controller;
+import com.fc.study.entity.Greeting;
+import com.fc.study.entity.Person;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@Controller
-public class MyControllers {
+@RestController
+public class MyController {
 
     @RequestMapping("/index")
     public String index(Model model) {
@@ -25,17 +23,28 @@ public class MyControllers {
         people.add(p2);
         people.add(p3);
 
+        // 向页面添加参数映射
         model.addAttribute("singlePerson", single);
         model.addAttribute("people", people);
         return "index";
     }
 
+    /**
+     * 使用get方法获取页面
+     * @param model
+     * @return
+     */
     @GetMapping("/greeting")
     public String greetingForm(Model model) {
         model.addAttribute("greeting", new Greeting());
         return "greeting";
     }
 
+    /**
+     * 使用post获取页面提交的数据
+     * @param greeting
+     * @return
+     */
     @PostMapping("/greeting")
     public String greetingSubmit(@ModelAttribute Greeting greeting) {
         long id = greeting.getId();
