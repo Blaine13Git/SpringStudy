@@ -1,0 +1,60 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <style type="text/css">
+        .align-center {
+            margin: 0 auto; /* 居中 这个是必须的，，其它的属性非必须 */
+            width: 500px; /* 给个宽度 顶到浏览器的两边就看不出居中效果了 */
+            background: #5a6268; /* 背景色 */
+            text-align: center; /* 文字等内容居中 */
+        }
+
+        body {
+            text-align: center
+        }
+    </style>
+    <meta content="text/html;charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>StudyHome</title>
+</head>
+<body>
+
+<div class="align-center">
+    <div>
+        <h3>访问model</h3>
+    </div>
+    <div>
+        <span th:text="${singlePerson.name}"></span>
+    </div>
+</div>
+
+<div th:if="${not #lists.isEmpty(people)}">
+    <div>
+        <div>
+            <h3>列表</h3>
+        </div>
+        <div>
+            <ul class="align-center">
+                <li th:each="person:${people}">
+                    <span th:text="${person.name}"></span>
+                    <span th:text="${person.age}"></span>
+                    <button th:onclick="'getName(\''+${person.name}+'\')'">获得名字</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<a href="/greeting"><h3>欢迎</h3></a>
+
+<script type="text/javascript" th:inline="javascript">
+    var single = [[${singlePerson}]];
+    console.log(single.name + "/" + single.age)
+
+    function getName(name) {
+        console.log(name);
+    }
+</script>
+
+</body>
+</html>
