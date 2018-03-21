@@ -27,7 +27,7 @@ public class MyController {
         // 向页面添加参数映射
         model.addAttribute("singlePerson", single);
         model.addAttribute("people", people);
-        return "index";
+        return "/thymeleaf/index";
     }
 
     /**
@@ -39,7 +39,7 @@ public class MyController {
     @GetMapping("/greeting")
     public String greetingForm(Model model) {
         model.addAttribute("greeting", new Greeting());
-        return "greeting";
+        return "/thymeleaf/greeting";
     }
 
     /**
@@ -53,7 +53,7 @@ public class MyController {
         long id = greeting.getId();
         String content = greeting.getContent();
         System.out.println(">>:" + id + "--" + content);
-        return "result";
+        return "/thymeleaf/result";
     }
 
 }
