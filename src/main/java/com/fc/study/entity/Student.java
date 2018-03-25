@@ -1,13 +1,15 @@
 package com.fc.study.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Student {
     private Integer id;
     private String name;
     private Integer age;
-
-    public Student() {
-
-    }
 
     public Student(Integer id, String name, Integer age) {
         this.id = id;
@@ -15,6 +17,8 @@ public class Student {
         this.age = age;
     }
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     public Integer getId() {
         return id;
     }

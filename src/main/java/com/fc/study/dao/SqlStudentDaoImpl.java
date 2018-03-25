@@ -2,11 +2,13 @@ package com.fc.study.dao;
 
 import com.fc.study.entity.Student;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Repository;
 
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 
 /**
  * 数据库操作方法的实现

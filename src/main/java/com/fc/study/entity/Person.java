@@ -1,5 +1,8 @@
 package com.fc.study.entity;
 
+import javax.persistence.Entity;
+
+@Entity
 public class Person {
     private String name;
     private Integer age;
