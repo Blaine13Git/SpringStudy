@@ -12,6 +12,5 @@ import java.util.Collection;
  */
 public interface StudentDao {
     Collection<Student> getAllStudents();
-
     Student getStudentById(Integer id);
 }

@@ -1,10 +1,8 @@
 package com.fc.study.dao;
 
 import com.fc.study.entity.Production;
-import com.fc.study.entity.Student;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import java.util.Collection;
 import java.util.List;
 
 /**
